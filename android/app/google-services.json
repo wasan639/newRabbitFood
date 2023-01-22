@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "534441645189",
+    "project_id": "rabbitfooddelivery-4f787",
+    "storage_bucket": "rabbitfooddelivery-4f787.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534441645189:android:08ee0829aa88bf921705ec",
+        "android_client_info": {
+          "package_name": "com.example.rabbitfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534441645189-4feoq8ve602ghi6t250d46tu2u99nur7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzlQwZI8Cpu0QGzxCzSo7zF-1GIvs9zQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534441645189-4feoq8ve602ghi6t250d46tu2u99nur7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

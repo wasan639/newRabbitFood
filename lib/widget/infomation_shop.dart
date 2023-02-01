@@ -48,8 +48,7 @@ class _InfomationShopState extends State<InfomationShop> {
   }
 
   Future routeToAddInfo() async {
-    Widget widget =
-        userModel!.nameShop!.isEmpty ? AddInfomationShop() : EditInfoShop();
+    Widget widget = userModel!.nameShop!.isEmpty ? AddInfomationShop() : EditInfoShop();
     MaterialPageRoute materialPageRoute =
         MaterialPageRoute(builder: (context) => widget);
     Navigator.push(context, materialPageRoute).then((value) => readDataUser());

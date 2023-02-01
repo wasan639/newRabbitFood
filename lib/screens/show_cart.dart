@@ -354,9 +354,9 @@ class _ShowCartState extends State<ShowCart> {
         String title = 'มีออเดอร์จากลูกค้า';
         String body = 'มีการสั่งอาหารจากลูกค้า';
 
-        String urlSemdToken = '${MyConstant().domain}/rabbitfood/apiNotification.php/?isAdd=true&token=$tokenShop&title=$title&body=$body';
+        String urlSendToken = '${MyConstant().domain}/rabbitfood/apiNotification.php/?isAdd=true&token=$tokenShop&title=$title&body=$body';
 
-        sendNOtificationToShop(urlSemdToken);
+        sendNOtificationToShop(urlSendToken);
 
       }
 

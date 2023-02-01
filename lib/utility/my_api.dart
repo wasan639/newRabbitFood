@@ -24,5 +24,11 @@ class MyAPI{
     return distance;
   }
 
+  List<String> createStringArrays(String string){
+    String resultString = string.substring(1, string.length - 1);
+    List<String> list = resultString.split(', ');
+    return list;
+  }
+
   MyAPI(){}
 }

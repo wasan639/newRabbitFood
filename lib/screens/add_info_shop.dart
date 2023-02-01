@@ -2,8 +2,6 @@ import 'dart:io';
 import 'dart:math';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart';
@@ -11,7 +9,6 @@ import 'package:rabbitfood/utility/my_constant.dart';
 import 'package:rabbitfood/utility/my_style.dart';
 import 'package:rabbitfood/utility/normal_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
 
 class AddInfomationShop extends StatefulWidget {
   const AddInfomationShop({super.key});
@@ -165,7 +162,6 @@ class _AddInfomationShopState extends State<AddInfomationShop> {
   }
 
   Future editUserShop() async {
-    
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String? id = preferences.getString('id');
 

@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rabbitfood/model/user_model.dart';
 import 'package:rabbitfood/screens/main_rider.dart';
 import 'package:rabbitfood/screens/main_shop.dart';
@@ -117,9 +115,9 @@ class _SignInState extends State<SignIn> {
 
   Future<Null> routeTuService(Widget myWidget, UserModel userModel) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-     preferences.setString('id', userModel.id.toString());
-     preferences.setString('ChooseType', userModel.chooseType.toString());
-     preferences.setString('Name', userModel.name.toString());
+     preferences.setString(MyConstant().keyId, userModel.id.toString());
+     preferences.setString(MyConstant().keyType, userModel.chooseType.toString());
+     preferences.setString(MyConstant().keyName, userModel.name.toString());
 
     MaterialPageRoute route = MaterialPageRoute(builder: (context) => myWidget);
     Navigator.pushAndRemoveUntil(context, route, (route) => false);

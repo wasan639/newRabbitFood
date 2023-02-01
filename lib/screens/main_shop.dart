@@ -1,8 +1,8 @@
+import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rabbitfood/utility/my_style.dart';
+import 'package:rabbitfood/utility/normal_dialog.dart';
 import 'package:rabbitfood/utility/signout_process.dart';
 import 'package:rabbitfood/widget/infomation_shop.dart';
 import 'package:rabbitfood/widget/list_food_menu_shop.dart';
@@ -18,6 +18,36 @@ class MainShop extends StatefulWidget {
 class _MainShopState extends State<MainShop> {
   Widget currentWidget = OrderListShop();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    aboutNotification();
+  }
+
+  Future<Null> aboutNotification() async {
+    if (Platform.isAndroid) {
+      print('aboutNoti Work Android');
+
+      // onMessage: When the app is open and it receives a push notification
+      FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+        print("onMessage data: ${message.data}");
+        String title = message.data['title'];
+        String body = message.data['body'];
+        normalDialog2(context, title, body);
+      });
+
+      // replacement for onResume: When the app is in the background and opened directly from the push notification.
+      FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+        print('onMessageOpenedApp data: ${message.data}');
+        String title = message.data['title'];
+        String body = message.data['body'];
+        normalDialog2(context, title, body);
+      });
+    } else if (Platform.isIOS) {
+      print('aboutNoti Work iOS');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
